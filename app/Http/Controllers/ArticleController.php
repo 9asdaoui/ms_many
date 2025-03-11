@@ -37,7 +37,8 @@ class ArticleController extends Controller
             "user_id"=> 'required',
             "tages"=> 'required'
         ]);
-        article->create($validated)
+
+        article::create($Validated);
         article::tag()->attach($Validated['tages']);
 
         return redirect('article/index');
